@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "338060836908",
+    "project_id": "margin-demo",
+    "storage_bucket": "margin-demo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:338060836908:android:fa2aa5a0499cac20f51189",
+        "android_client_info": {
+          "package_name": "ch.privately.margin.demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "338060836908-blpae870e69fkqkdjj20auj3iou52vam.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfOdYNeCy--keGvo6_fHb61aKHVrRs-Jw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "338060836908-blpae870e69fkqkdjj20auj3iou52vam.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
