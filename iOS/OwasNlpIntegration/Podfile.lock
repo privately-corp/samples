@@ -1,0 +1,21 @@
+PODS:
+  - OwasNlp (0.1.1):
+    - PrivatelyCoreIos (= 0.1.0)
+  - PrivatelyCoreIos (0.1.0)
+
+DEPENDENCIES:
+  - OwasNlp (~> 0.1.1)
+  - PrivatelyCoreIos (~> 0.1.0)
+
+SPEC REPOS:
+  trunk:
+    - OwasNlp
+    - PrivatelyCoreIos
+
+SPEC CHECKSUMS:
+  OwasNlp: 9f0016b0afa35e761d19b98fd6c90601b71d0e36
+  PrivatelyCoreIos: c37034f16ad5a573a79f6e4644993fe1a6ce5fa4
+
+PODFILE CHECKSUM: 29ec6bc08981981c1b58a742eac596118d4e9ee5
+
+COCOAPODS: 1.11.3
