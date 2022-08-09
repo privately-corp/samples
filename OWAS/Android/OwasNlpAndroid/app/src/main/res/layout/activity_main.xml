@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/edit_text"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/black"
+        android:gravity="top"
+        android:background="@drawable/edit_text_border"
+        />
+
+    <Button
+        android:id="@+id/clear_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/edit_text"
+        app:layout_constraintTop_toBottomOf="@id/edit_text"
+        android:textSize="20sp"
+        android:text="clear"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/analyze_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/edit_text"
+        app:layout_constraintTop_toBottomOf="@id/edit_text"
+        android:textSize="20sp"
+        android:text="analyze"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/hate_speech_result_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/analyze_button"
+        app:layout_constraintStart_toStartOf="@id/edit_text"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:text="Hate speech result:"/>
+
+    <TextView
+        android:id="@+id/toxicity_result_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/hate_speech_result_text_view"
+        app:layout_constraintStart_toStartOf="@id/edit_text"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:text="Toxicity result:"/>
+
+    <TextView
+        android:id="@+id/profanity_result_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/toxicity_result_text_view"
+        app:layout_constraintStart_toStartOf="@id/edit_text"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:text="Contains profanity:"/>
+
+    <TextView
+        android:id="@+id/sensitive_info_result_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/profanity_result_text_view"
+        app:layout_constraintStart_toStartOf="@id/edit_text"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:text="Sensitive info:"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
