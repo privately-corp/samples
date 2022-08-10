@@ -1,0 +1,63 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
+// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name OwasImage
+import CoreGraphics
+import CoreImage
+import CoreML
+import Foundation
+@_exported import OwasImage
+import Swift
+import UIKit
+import _Concurrency
+public enum NudityClass {
+  case sexy
+  case bikini
+  case nsfw
+  case clean
+  public static func == (a: OwasImage.NudityClass, b: OwasImage.NudityClass) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class ImageClassifier {
+  public var lastMlLoadingError: Swift.Error?
+  public class func sharedInstance() -> OwasImage.ImageClassifier
+  public func containsNudity(image: UIKit.UIImage) -> Swift.Bool
+  public func analyseImage(image: UIKit.UIImage) -> [OwasImage.NudityClass : Swift.Float]
+  @objc deinit
+}
+extension UIKit.UIImage {
+  public static func af_threadSafeImage(with data: Foundation.Data) -> UIKit.UIImage?
+  public static func af_threadSafeImage(with data: Foundation.Data, scale: CoreGraphics.CGFloat) -> UIKit.UIImage?
+}
+extension UIKit.UIImage {
+  public var af_inflated: Swift.Bool {
+    get
+    set
+  }
+  public func af_inflate()
+}
+extension UIKit.UIImage {
+  public var af_containsAlphaComponent: Swift.Bool {
+    get
+  }
+  public var af_isOpaque: Swift.Bool {
+    get
+  }
+}
+extension UIKit.UIImage {
+  public func af_imageScaled(to size: CoreGraphics.CGSize, scale: CoreGraphics.CGFloat) -> UIKit.UIImage
+  public func af_imageAspectScaled(toFit size: CoreGraphics.CGSize) -> UIKit.UIImage
+  public func af_imageAspectScaled(toFill size: CoreGraphics.CGSize) -> UIKit.UIImage
+}
+extension UIKit.UIImage {
+  public func af_imageRounded(withCornerRadius radius: CoreGraphics.CGFloat, divideRadiusByImageScale: Swift.Bool = false) -> UIKit.UIImage
+  public func af_imageRoundedIntoCircle() -> UIKit.UIImage
+}
+@available(iOS 9.0, *)
+extension UIKit.UIImage {
+  public func af_imageFiltered(withCoreImageFilter name: Swift.String, parameters: [Swift.String : Any]? = nil) -> UIKit.UIImage?
+}
+extension OwasImage.NudityClass : Swift.Equatable {}
+extension OwasImage.NudityClass : Swift.Hashable {}

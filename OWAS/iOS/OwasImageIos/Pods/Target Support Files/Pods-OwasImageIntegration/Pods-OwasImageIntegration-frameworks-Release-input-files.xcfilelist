@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-OwasImageIntegration/Pods-OwasImageIntegration-frameworks.sh
+${PODS_XCFRAMEWORKS_BUILD_DIR}/OwasImage/OwasImage.framework/OwasImage
+${PODS_XCFRAMEWORKS_BUILD_DIR}/PrivatelyCoreIos/PrivatelyCoreIos.framework/PrivatelyCoreIos

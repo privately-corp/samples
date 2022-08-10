@@ -1,0 +1,683 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		A1A9E5F17805B9E3EE41EA7D32BB4CA4 /* OwasImage */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 28C75AC01C2FC70F0935C0D517DC7903 /* Build configuration list for PBXAggregateTarget "OwasImage" */;
+			buildPhases = (
+				E5DD953CFBF45F73EB9B98BE50F96A54 /* [CP] Copy XCFrameworks */,
+			);
+			dependencies = (
+				33711592249279E19AC493C7AD3E4843 /* PBXTargetDependency */,
+			);
+			name = OwasImage;
+		};
+		E9BC8A768524366814AB9B558DE2F161 /* PrivatelyCoreIos */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = B18BC555F14938D04E00E23B0ED0DBA8 /* Build configuration list for PBXAggregateTarget "PrivatelyCoreIos" */;
+			buildPhases = (
+				8D4C9368EA4F6BFE713C043827FF1D5B /* [CP] Copy XCFrameworks */,
+			);
+			dependencies = (
+			);
+			name = PrivatelyCoreIos;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		469E5988FC8B6D1CCED54B61D573EB63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		74921DD99C74AB3E43B8065C7B54E26D /* Pods-OwasImageIntegration-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B9B8018B26645644EA0FDBE7B129DF4 /* Pods-OwasImageIntegration-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA65F59F0F90ABC57943835978CC0592 /* Pods-OwasImageIntegration-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BD608B0BBF58254CD1300717CC053536 /* Pods-OwasImageIntegration-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		22BCC6D96A85CBAE27FABBFAC3265A7D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E9BC8A768524366814AB9B558DE2F161;
+			remoteInfo = PrivatelyCoreIos;
+		};
+		BA77F2347E11DC9957EB766437888B4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E9BC8A768524366814AB9B558DE2F161;
+			remoteInfo = PrivatelyCoreIos;
+		};
+		E6148BE0225F202719866B4EC6F627E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1A9E5F17805B9E3EE41EA7D32BB4CA4;
+			remoteInfo = OwasImage;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1BC02B75ECBC08501B75836E4AB39F81 /* Pods-OwasImageIntegration-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OwasImageIntegration-Info.plist"; sourceTree = "<group>"; };
+		1D4078ADE1F3B68F31FFCC5A5ADFBCF9 /* Pods-OwasImageIntegration-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OwasImageIntegration-acknowledgements.markdown"; sourceTree = "<group>"; };
+		223C299E1026D342EC74D74B4C2E5E6F /* Podfile.rb */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile.rb; path = ../Podfile.rb; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2642D43A6F7B5E08D2D803BEE044979F /* Pods-OwasImageIntegration-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OwasImageIntegration-frameworks.sh"; sourceTree = "<group>"; };
+		387D7A3ACF68DE95A48D78D7EBD37CE0 /* Pods-OwasImageIntegration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OwasImageIntegration.release.xcconfig"; sourceTree = "<group>"; };
+		3C60DFEA29B2EF8F9DF01F268C18981A /* PrivatelyCoreIos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PrivatelyCoreIos.release.xcconfig; sourceTree = "<group>"; };
+		4B9B8018B26645644EA0FDBE7B129DF4 /* Pods-OwasImageIntegration-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OwasImageIntegration-umbrella.h"; sourceTree = "<group>"; };
+		64B37DFFB790BF141B8E86133068EFD9 /* OwasImage-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "OwasImage-xcframeworks.sh"; sourceTree = "<group>"; };
+		6BDB9562A24C322B342D416F3FAF62CD /* PrivatelyCoreIos.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = PrivatelyCoreIos.xcframework; sourceTree = "<group>"; };
+		6EC327D3FBABAB2578CFE64CF0DD868A /* PrivatelyCoreIos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PrivatelyCoreIos.debug.xcconfig; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		84FBD1B80ED33714D81B23A9A34B1DFE /* Pods-OwasImageIntegration-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OwasImageIntegration-acknowledgements.plist"; sourceTree = "<group>"; };
+		9135F73D35FD4A94BD7959008C7DD6BA /* Pods-OwasImageIntegration.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OwasImageIntegration.debug.xcconfig"; sourceTree = "<group>"; };
+		95B94BBFF1119653DF85D2A8A34B048C /* OwasImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OwasImage.release.xcconfig; sourceTree = "<group>"; };
+		A55EB585537C6CCD652A9A578EC095AE /* OwasImage.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = OwasImage.xcframework; sourceTree = "<group>"; };
+		BAA673AE60E8B4828F7D6F0D594EB45B /* OwasImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OwasImage.debug.xcconfig; sourceTree = "<group>"; };
+		BD608B0BBF58254CD1300717CC053536 /* Pods-OwasImageIntegration-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OwasImageIntegration-dummy.m"; sourceTree = "<group>"; };
+		CD9108B4095D89BAE62D8A0742A84C50 /* Pods-OwasImageIntegration */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-OwasImageIntegration"; path = Pods_OwasImageIntegration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D590F5F46D5B7C0768190BABEC57EFEB /* PrivatelyCoreIos-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "PrivatelyCoreIos-xcframeworks.sh"; sourceTree = "<group>"; };
+		F8CF972348F0E61D9379470425E1B1FF /* Pods-OwasImageIntegration.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-OwasImageIntegration.modulemap"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DDA8E03D39A617E627B75E9228ABE112 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				469E5988FC8B6D1CCED54B61D573EB63 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		50A12A82A004781109CD201A20627564 /* OwasImage */ = {
+			isa = PBXGroup;
+			children = (
+				F42E6A2FF9D3D7B022611E344FF47E8F /* Frameworks */,
+				73A608DBFC2A0A467180E5F7B83B2D51 /* Support Files */,
+			);
+			name = OwasImage;
+			path = OwasImage;
+			sourceTree = "<group>";
+		};
+		564D8A6E8105FEB244D1DE1140854B16 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A8619114ED139CC373D85F20BCE06214 /* Pods-OwasImageIntegration */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		5B5264F72B50E98CB00B040A341264F3 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D590F5F46D5B7C0768190BABEC57EFEB /* PrivatelyCoreIos-xcframeworks.sh */,
+				6EC327D3FBABAB2578CFE64CF0DD868A /* PrivatelyCoreIos.debug.xcconfig */,
+				3C60DFEA29B2EF8F9DF01F268C18981A /* PrivatelyCoreIos.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PrivatelyCoreIos";
+			sourceTree = "<group>";
+		};
+		63AB40748E4C51D979A7115B0305CC24 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6BDB9562A24C322B342D416F3FAF62CD /* PrivatelyCoreIos.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6FA60E1814B487BF7A3FA9D28763C898 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD9108B4095D89BAE62D8A0742A84C50 /* Pods-OwasImageIntegration */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		73A608DBFC2A0A467180E5F7B83B2D51 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				64B37DFFB790BF141B8E86133068EFD9 /* OwasImage-xcframeworks.sh */,
+				BAA673AE60E8B4828F7D6F0D594EB45B /* OwasImage.debug.xcconfig */,
+				95B94BBFF1119653DF85D2A8A34B048C /* OwasImage.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/OwasImage";
+			sourceTree = "<group>";
+		};
+		77F8BDE74625075794A2458AEF79ACE7 /* PrivatelyCoreIos */ = {
+			isa = PBXGroup;
+			children = (
+				63AB40748E4C51D979A7115B0305CC24 /* Frameworks */,
+				5B5264F72B50E98CB00B040A341264F3 /* Support Files */,
+			);
+			name = PrivatelyCoreIos;
+			path = PrivatelyCoreIos;
+			sourceTree = "<group>";
+		};
+		7ADBAA9A499D679E6E86EC7466F25C1B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				50A12A82A004781109CD201A20627564 /* OwasImage */,
+				77F8BDE74625075794A2458AEF79ACE7 /* PrivatelyCoreIos */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A8619114ED139CC373D85F20BCE06214 /* Pods-OwasImageIntegration */ = {
+			isa = PBXGroup;
+			children = (
+				F8CF972348F0E61D9379470425E1B1FF /* Pods-OwasImageIntegration.modulemap */,
+				1D4078ADE1F3B68F31FFCC5A5ADFBCF9 /* Pods-OwasImageIntegration-acknowledgements.markdown */,
+				84FBD1B80ED33714D81B23A9A34B1DFE /* Pods-OwasImageIntegration-acknowledgements.plist */,
+				BD608B0BBF58254CD1300717CC053536 /* Pods-OwasImageIntegration-dummy.m */,
+				2642D43A6F7B5E08D2D803BEE044979F /* Pods-OwasImageIntegration-frameworks.sh */,
+				1BC02B75ECBC08501B75836E4AB39F81 /* Pods-OwasImageIntegration-Info.plist */,
+				4B9B8018B26645644EA0FDBE7B129DF4 /* Pods-OwasImageIntegration-umbrella.h */,
+				9135F73D35FD4A94BD7959008C7DD6BA /* Pods-OwasImageIntegration.debug.xcconfig */,
+				387D7A3ACF68DE95A48D78D7EBD37CE0 /* Pods-OwasImageIntegration.release.xcconfig */,
+			);
+			name = "Pods-OwasImageIntegration";
+			path = "Target Support Files/Pods-OwasImageIntegration";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				223C299E1026D342EC74D74B4C2E5E6F /* Podfile.rb */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				7ADBAA9A499D679E6E86EC7466F25C1B /* Pods */,
+				6FA60E1814B487BF7A3FA9D28763C898 /* Products */,
+				564D8A6E8105FEB244D1DE1140854B16 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F42E6A2FF9D3D7B022611E344FF47E8F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A55EB585537C6CCD652A9A578EC095AE /* OwasImage.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		466864633426007D886D1134510BD861 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74921DD99C74AB3E43B8065C7B54E26D /* Pods-OwasImageIntegration-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		F2FB291AEB229A3932A81C62DCA86A30 /* Pods-OwasImageIntegration */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3453F4E22ADD5BA6318C595EF1930841 /* Build configuration list for PBXNativeTarget "Pods-OwasImageIntegration" */;
+			buildPhases = (
+				466864633426007D886D1134510BD861 /* Headers */,
+				14F4DFD1160FDDE91C2BE0540C9A85FD /* Sources */,
+				DDA8E03D39A617E627B75E9228ABE112 /* Frameworks */,
+				755C0E8078D685CA7B046C10B474F430 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEA90FAE2AFA9084CDB776CB0D203784 /* PBXTargetDependency */,
+				9658D5C3B282CF034C84F16320525165 /* PBXTargetDependency */,
+			);
+			name = "Pods-OwasImageIntegration";
+			productName = Pods_OwasImageIntegration;
+			productReference = CD9108B4095D89BAE62D8A0742A84C50 /* Pods-OwasImageIntegration */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 6FA60E1814B487BF7A3FA9D28763C898 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1A9E5F17805B9E3EE41EA7D32BB4CA4 /* OwasImage */,
+				F2FB291AEB229A3932A81C62DCA86A30 /* Pods-OwasImageIntegration */,
+				E9BC8A768524366814AB9B558DE2F161 /* PrivatelyCoreIos */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		755C0E8078D685CA7B046C10B474F430 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8D4C9368EA4F6BFE713C043827FF1D5B /* [CP] Copy XCFrameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/PrivatelyCoreIos/PrivatelyCoreIos-xcframeworks-input-files.xcfilelist",
+			);
+			name = "[CP] Copy XCFrameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/PrivatelyCoreIos/PrivatelyCoreIos-xcframeworks-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/PrivatelyCoreIos/PrivatelyCoreIos-xcframeworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5DD953CFBF45F73EB9B98BE50F96A54 /* [CP] Copy XCFrameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/OwasImage/OwasImage-xcframeworks-input-files.xcfilelist",
+			);
+			name = "[CP] Copy XCFrameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/OwasImage/OwasImage-xcframeworks-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/OwasImage/OwasImage-xcframeworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		14F4DFD1160FDDE91C2BE0540C9A85FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA65F59F0F90ABC57943835978CC0592 /* Pods-OwasImageIntegration-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		33711592249279E19AC493C7AD3E4843 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PrivatelyCoreIos;
+			target = E9BC8A768524366814AB9B558DE2F161 /* PrivatelyCoreIos */;
+			targetProxy = BA77F2347E11DC9957EB766437888B4E /* PBXContainerItemProxy */;
+		};
+		9658D5C3B282CF034C84F16320525165 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PrivatelyCoreIos;
+			target = E9BC8A768524366814AB9B558DE2F161 /* PrivatelyCoreIos */;
+			targetProxy = 22BCC6D96A85CBAE27FABBFAC3265A7D /* PBXContainerItemProxy */;
+		};
+		CEA90FAE2AFA9084CDB776CB0D203784 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OwasImage;
+			target = A1A9E5F17805B9E3EE41EA7D32BB4CA4 /* OwasImage */;
+			targetProxy = E6148BE0225F202719866B4EC6F627E6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3425F76060BA0CB0120BF88547698284 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9135F73D35FD4A94BD7959008C7DD6BA /* Pods-OwasImageIntegration.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-OwasImageIntegration/Pods-OwasImageIntegration-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-OwasImageIntegration/Pods-OwasImageIntegration.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		48E7A73549169A85F709F3B227B82CE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAA673AE60E8B4828F7D6F0D594EB45B /* OwasImage.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4A7285B7893EEBFFFA3AB66680000D06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95B94BBFF1119653DF85D2A8A34B048C /* OwasImage.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6EBA102C1632E4C66F9183706040BE66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 387D7A3ACF68DE95A48D78D7EBD37CE0 /* Pods-OwasImageIntegration.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-OwasImageIntegration/Pods-OwasImageIntegration-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-OwasImageIntegration/Pods-OwasImageIntegration.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		90D4D09BCB6A4660E43ACBE9ECB6FE9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		9553C89E183877A5CB2F3C6801BEC129 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		A085803CB21C520209B3EB488DB137B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EC327D3FBABAB2578CFE64CF0DD868A /* PrivatelyCoreIos.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D14CD314C3AD24989DCCF52472063593 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C60DFEA29B2EF8F9DF01F268C18981A /* PrivatelyCoreIos.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		28C75AC01C2FC70F0935C0D517DC7903 /* Build configuration list for PBXAggregateTarget "OwasImage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48E7A73549169A85F709F3B227B82CE5 /* Debug */,
+				4A7285B7893EEBFFFA3AB66680000D06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3453F4E22ADD5BA6318C595EF1930841 /* Build configuration list for PBXNativeTarget "Pods-OwasImageIntegration" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3425F76060BA0CB0120BF88547698284 /* Debug */,
+				6EBA102C1632E4C66F9183706040BE66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90D4D09BCB6A4660E43ACBE9ECB6FE9A /* Debug */,
+				9553C89E183877A5CB2F3C6801BEC129 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B18BC555F14938D04E00E23B0ED0DBA8 /* Build configuration list for PBXAggregateTarget "PrivatelyCoreIos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A085803CB21C520209B3EB488DB137B3 /* Debug */,
+				D14CD314C3AD24989DCCF52472063593 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

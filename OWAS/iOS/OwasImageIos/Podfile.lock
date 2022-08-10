@@ -1,0 +1,21 @@
+PODS:
+  - OwasImage (0.1.0):
+    - PrivatelyCoreIos (= 0.1.0)
+  - PrivatelyCoreIos (0.1.0)
+
+DEPENDENCIES:
+  - OwasImage (~> 0.1.0)
+  - PrivatelyCoreIos (~> 0.1.0)
+
+SPEC REPOS:
+  trunk:
+    - OwasImage
+    - PrivatelyCoreIos
+
+SPEC CHECKSUMS:
+  OwasImage: 99fb6a9ac89fcf942bc21a036a270f6bf1826c83
+  PrivatelyCoreIos: c37034f16ad5a573a79f6e4644993fe1a6ce5fa4
+
+PODFILE CHECKSUM: 3a1adaa87b0206a5751375d0a5a0a3fc339727b7
+
+COCOAPODS: 1.11.3

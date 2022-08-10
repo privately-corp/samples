@@ -1,0 +1,4 @@
+framework module PrivatelyCoreIos {
+  header "PrivatelyCoreIos-Swift.h"
+  requires objc
+}

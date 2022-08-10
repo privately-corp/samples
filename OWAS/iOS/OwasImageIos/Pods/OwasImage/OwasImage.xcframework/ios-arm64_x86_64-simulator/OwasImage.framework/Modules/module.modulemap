@@ -1,0 +1,11 @@
+framework module OwasImage {
+  umbrella header "OwasImage.h"
+
+  export *
+  module * { export * }
+}
+
+module OwasImage.Swift {
+    header "OwasImage-Swift.h"
+    requires objc
+}

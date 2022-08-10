@@ -1,0 +1,692 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2EAE2661288EC54000A8B36B /* OwasImageIntegrationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE2660288EC54000A8B36B /* OwasImageIntegrationApp.swift */; };
+		2EAE2663288EC54000A8B36B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE2662288EC54000A8B36B /* ContentView.swift */; };
+		2EAE2665288EC54100A8B36B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EAE2664288EC54100A8B36B /* Assets.xcassets */; };
+		2EAE2668288EC54100A8B36B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EAE2667288EC54100A8B36B /* Preview Assets.xcassets */; };
+		2EAE2672288EC54100A8B36B /* OwasImageIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE2671288EC54100A8B36B /* OwasImageIntegrationTests.swift */; };
+		2EAE267C288EC54100A8B36B /* OwasImageIntegrationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE267B288EC54100A8B36B /* OwasImageIntegrationUITests.swift */; };
+		2EAE267E288EC54100A8B36B /* OwasImageIntegrationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE267D288EC54100A8B36B /* OwasImageIntegrationUITestsLaunchTests.swift */; };
+		2EAE268F288EC73000A8B36B /* Pods_OwasImageIntegration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EAE268E288EC73000A8B36B /* Pods_OwasImageIntegration.framework */; };
+		2EAE2697288EEF3300A8B36B /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE2696288EEF3300A8B36B /* ImagePicker.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2EAE266E288EC54100A8B36B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2EAE2655288EC54000A8B36B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2EAE265C288EC54000A8B36B;
+			remoteInfo = OwasImageIntegration;
+		};
+		2EAE2678288EC54100A8B36B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2EAE2655288EC54000A8B36B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2EAE265C288EC54000A8B36B;
+			remoteInfo = OwasImageIntegration;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		29FF6BFC1DB61B5C6EFC9D84 /* Pods-OwasImageIntegration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OwasImageIntegration.release.xcconfig"; path = "Target Support Files/Pods-OwasImageIntegration/Pods-OwasImageIntegration.release.xcconfig"; sourceTree = "<group>"; };
+		2EAE265D288EC54000A8B36B /* OwasImageIntegration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OwasImageIntegration.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EAE2660288EC54000A8B36B /* OwasImageIntegrationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwasImageIntegrationApp.swift; sourceTree = "<group>"; };
+		2EAE2662288EC54000A8B36B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2EAE2664288EC54100A8B36B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2EAE2667288EC54100A8B36B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2EAE266D288EC54100A8B36B /* OwasImageIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OwasImageIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EAE2671288EC54100A8B36B /* OwasImageIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwasImageIntegrationTests.swift; sourceTree = "<group>"; };
+		2EAE2677288EC54100A8B36B /* OwasImageIntegrationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OwasImageIntegrationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EAE267B288EC54100A8B36B /* OwasImageIntegrationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwasImageIntegrationUITests.swift; sourceTree = "<group>"; };
+		2EAE267D288EC54100A8B36B /* OwasImageIntegrationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwasImageIntegrationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2EAE268A288EC6E800A8B36B /* OwasImage.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OwasImage.xcframework; path = "../owas-sdk-ios/build/OwasImage.xcframework"; sourceTree = "<group>"; };
+		2EAE268E288EC73000A8B36B /* Pods_OwasImageIntegration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_OwasImageIntegration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EAE2692288EC74400A8B36B /* OwasImage.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OwasImage.xcframework; path = Frameworks/OwasImage.xcframework; sourceTree = "<group>"; };
+		2EAE2696288EEF3300A8B36B /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		910E4160871BD873DB1CF416 /* Pods-OwasImageIntegration.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OwasImageIntegration.debug.xcconfig"; path = "Target Support Files/Pods-OwasImageIntegration/Pods-OwasImageIntegration.debug.xcconfig"; sourceTree = "<group>"; };
+		DA8811CB4F9D5D9AE37FE4BD /* Pods_OwasImageIntegration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OwasImageIntegration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2EAE265A288EC54000A8B36B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EAE268F288EC73000A8B36B /* Pods_OwasImageIntegration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EAE266A288EC54100A8B36B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EAE2674288EC54100A8B36B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2EAE2654288EC54000A8B36B = {
+			isa = PBXGroup;
+			children = (
+				2EAE265F288EC54000A8B36B /* OwasImageIntegration */,
+				2EAE2670288EC54100A8B36B /* OwasImageIntegrationTests */,
+				2EAE267A288EC54100A8B36B /* OwasImageIntegrationUITests */,
+				2EAE265E288EC54000A8B36B /* Products */,
+				C8920BE2B04AE256903727B4 /* Pods */,
+				32378D387B3FABF12FDA6A5E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2EAE265E288EC54000A8B36B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2EAE265D288EC54000A8B36B /* OwasImageIntegration.app */,
+				2EAE266D288EC54100A8B36B /* OwasImageIntegrationTests.xctest */,
+				2EAE2677288EC54100A8B36B /* OwasImageIntegrationUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2EAE265F288EC54000A8B36B /* OwasImageIntegration */ = {
+			isa = PBXGroup;
+			children = (
+				2EAE2660288EC54000A8B36B /* OwasImageIntegrationApp.swift */,
+				2EAE2662288EC54000A8B36B /* ContentView.swift */,
+				2EAE2664288EC54100A8B36B /* Assets.xcassets */,
+				2EAE2666288EC54100A8B36B /* Preview Content */,
+				2EAE2696288EEF3300A8B36B /* ImagePicker.swift */,
+			);
+			path = OwasImageIntegration;
+			sourceTree = "<group>";
+		};
+		2EAE2666288EC54100A8B36B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2EAE2667288EC54100A8B36B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2EAE2670288EC54100A8B36B /* OwasImageIntegrationTests */ = {
+			isa = PBXGroup;
+			children = (
+				2EAE2671288EC54100A8B36B /* OwasImageIntegrationTests.swift */,
+			);
+			path = OwasImageIntegrationTests;
+			sourceTree = "<group>";
+		};
+		2EAE267A288EC54100A8B36B /* OwasImageIntegrationUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2EAE267B288EC54100A8B36B /* OwasImageIntegrationUITests.swift */,
+				2EAE267D288EC54100A8B36B /* OwasImageIntegrationUITestsLaunchTests.swift */,
+			);
+			path = OwasImageIntegrationUITests;
+			sourceTree = "<group>";
+		};
+		32378D387B3FABF12FDA6A5E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2EAE2692288EC74400A8B36B /* OwasImage.xcframework */,
+				2EAE268E288EC73000A8B36B /* Pods_OwasImageIntegration.framework */,
+				2EAE268A288EC6E800A8B36B /* OwasImage.xcframework */,
+				DA8811CB4F9D5D9AE37FE4BD /* Pods_OwasImageIntegration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C8920BE2B04AE256903727B4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				910E4160871BD873DB1CF416 /* Pods-OwasImageIntegration.debug.xcconfig */,
+				29FF6BFC1DB61B5C6EFC9D84 /* Pods-OwasImageIntegration.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2EAE265C288EC54000A8B36B /* OwasImageIntegration */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EAE2681288EC54100A8B36B /* Build configuration list for PBXNativeTarget "OwasImageIntegration" */;
+			buildPhases = (
+				865609C9339CFA1796541BAF /* [CP] Check Pods Manifest.lock */,
+				2EAE2659288EC54000A8B36B /* Sources */,
+				2EAE265A288EC54000A8B36B /* Frameworks */,
+				2EAE265B288EC54000A8B36B /* Resources */,
+				925D2C2CE3E9F35419EC6BB5 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OwasImageIntegration;
+			productName = OwasImageIntegration;
+			productReference = 2EAE265D288EC54000A8B36B /* OwasImageIntegration.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2EAE266C288EC54100A8B36B /* OwasImageIntegrationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EAE2684288EC54100A8B36B /* Build configuration list for PBXNativeTarget "OwasImageIntegrationTests" */;
+			buildPhases = (
+				2EAE2669288EC54100A8B36B /* Sources */,
+				2EAE266A288EC54100A8B36B /* Frameworks */,
+				2EAE266B288EC54100A8B36B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2EAE266F288EC54100A8B36B /* PBXTargetDependency */,
+			);
+			name = OwasImageIntegrationTests;
+			productName = OwasImageIntegrationTests;
+			productReference = 2EAE266D288EC54100A8B36B /* OwasImageIntegrationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2EAE2676288EC54100A8B36B /* OwasImageIntegrationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EAE2687288EC54100A8B36B /* Build configuration list for PBXNativeTarget "OwasImageIntegrationUITests" */;
+			buildPhases = (
+				2EAE2673288EC54100A8B36B /* Sources */,
+				2EAE2674288EC54100A8B36B /* Frameworks */,
+				2EAE2675288EC54100A8B36B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2EAE2679288EC54100A8B36B /* PBXTargetDependency */,
+			);
+			name = OwasImageIntegrationUITests;
+			productName = OwasImageIntegrationUITests;
+			productReference = 2EAE2677288EC54100A8B36B /* OwasImageIntegrationUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2EAE2655288EC54000A8B36B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					2EAE265C288EC54000A8B36B = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					2EAE266C288EC54100A8B36B = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 2EAE265C288EC54000A8B36B;
+					};
+					2EAE2676288EC54100A8B36B = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 2EAE265C288EC54000A8B36B;
+					};
+				};
+			};
+			buildConfigurationList = 2EAE2658288EC54000A8B36B /* Build configuration list for PBXProject "OwasImageIntegration" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2EAE2654288EC54000A8B36B;
+			productRefGroup = 2EAE265E288EC54000A8B36B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2EAE265C288EC54000A8B36B /* OwasImageIntegration */,
+				2EAE266C288EC54100A8B36B /* OwasImageIntegrationTests */,
+				2EAE2676288EC54100A8B36B /* OwasImageIntegrationUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2EAE265B288EC54000A8B36B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EAE2668288EC54100A8B36B /* Preview Assets.xcassets in Resources */,
+				2EAE2665288EC54100A8B36B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EAE266B288EC54100A8B36B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EAE2675288EC54100A8B36B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		865609C9339CFA1796541BAF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OwasImageIntegration-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		925D2C2CE3E9F35419EC6BB5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OwasImageIntegration/Pods-OwasImageIntegration-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OwasImageIntegration/Pods-OwasImageIntegration-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OwasImageIntegration/Pods-OwasImageIntegration-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2EAE2659288EC54000A8B36B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EAE2697288EEF3300A8B36B /* ImagePicker.swift in Sources */,
+				2EAE2663288EC54000A8B36B /* ContentView.swift in Sources */,
+				2EAE2661288EC54000A8B36B /* OwasImageIntegrationApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EAE2669288EC54100A8B36B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EAE2672288EC54100A8B36B /* OwasImageIntegrationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EAE2673288EC54100A8B36B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EAE267C288EC54100A8B36B /* OwasImageIntegrationUITests.swift in Sources */,
+				2EAE267E288EC54100A8B36B /* OwasImageIntegrationUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2EAE266F288EC54100A8B36B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2EAE265C288EC54000A8B36B /* OwasImageIntegration */;
+			targetProxy = 2EAE266E288EC54100A8B36B /* PBXContainerItemProxy */;
+		};
+		2EAE2679288EC54100A8B36B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2EAE265C288EC54000A8B36B /* OwasImageIntegration */;
+			targetProxy = 2EAE2678288EC54100A8B36B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2EAE267F288EC54100A8B36B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2EAE2680288EC54100A8B36B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2EAE2682288EC54100A8B36B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 910E4160871BD873DB1CF416 /* Pods-OwasImageIntegration.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"OwasImageIntegration/Preview Content\"";
+				DEVELOPMENT_TEAM = 5R8Z6749JR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Analyse picture for nudity";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.privately.OwasImageIntegration;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2EAE2683288EC54100A8B36B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29FF6BFC1DB61B5C6EFC9D84 /* Pods-OwasImageIntegration.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"OwasImageIntegration/Preview Content\"";
+				DEVELOPMENT_TEAM = 5R8Z6749JR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Analyse picture for nudity";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.privately.OwasImageIntegration;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2EAE2685288EC54100A8B36B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5R8Z6749JR;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.privately.OwasImageIntegrationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OwasImageIntegration.app/OwasImageIntegration";
+			};
+			name = Debug;
+		};
+		2EAE2686288EC54100A8B36B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5R8Z6749JR;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.privately.OwasImageIntegrationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OwasImageIntegration.app/OwasImageIntegration";
+			};
+			name = Release;
+		};
+		2EAE2688288EC54100A8B36B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5R8Z6749JR;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.privately.OwasImageIntegrationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OwasImageIntegration;
+			};
+			name = Debug;
+		};
+		2EAE2689288EC54100A8B36B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5R8Z6749JR;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.privately.OwasImageIntegrationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OwasImageIntegration;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2EAE2658288EC54000A8B36B /* Build configuration list for PBXProject "OwasImageIntegration" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EAE267F288EC54100A8B36B /* Debug */,
+				2EAE2680288EC54100A8B36B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2EAE2681288EC54100A8B36B /* Build configuration list for PBXNativeTarget "OwasImageIntegration" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EAE2682288EC54100A8B36B /* Debug */,
+				2EAE2683288EC54100A8B36B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2EAE2684288EC54100A8B36B /* Build configuration list for PBXNativeTarget "OwasImageIntegrationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EAE2685288EC54100A8B36B /* Debug */,
+				2EAE2686288EC54100A8B36B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2EAE2687288EC54100A8B36B /* Build configuration list for PBXNativeTarget "OwasImageIntegrationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EAE2688288EC54100A8B36B /* Debug */,
+				2EAE2689288EC54100A8B36B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2EAE2655288EC54000A8B36B /* Project object */;
+}
