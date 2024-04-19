@@ -1,35 +1,101 @@
 package ch.privately.marginsdk.marginsdkintegration;
 
 import android.app.Activity;
+import android.graphics.PointF;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.WindowManager;
+import android.widget.TextView;
 
-import ch.privately.ageestimation.image.AgeEstimationImageCallback;
-import ch.privately.ageestimation.image.AgeEstimationImageCore;
-import ch.privately.ageestimation.image.estimation.AgeEstimationImageResult;
-import ch.privately.ageestimation.image.estimation.VideoAgeEstimationView;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class VideoActivity extends Activity {
+import java.util.ArrayList;
+import java.util.List;
+
+import ch.privately.ageestimation.image.AgeEstimationListener;
+import ch.privately.ageestimation.image.AgeEstimationView;
+import ch.privately.ageestimation.image.FaceOrientation;
+import ch.privately.core.PrivatelyCore;
+
+public class VideoActivity extends AppCompatActivity implements AgeEstimationListener {
     private static final String TAG = "VideoActivity";
+    private boolean useFrontCamera = true;
+
+    private TextView resultView;
+    private AgeEstimationView cameraView;
+
+    private List<Boolean> estimations = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_video_age_estimation);
+        PrivatelyCore.INSTANCE.init(this);
 
-        VideoAgeEstimationView ageEstimationView = findViewById(R.id.video_age_estimation_view);
-        AgeEstimationImageCore.registerAgeEstimationCallback(new AgeEstimationImageCallback() {
-            @Override
-            public void onVideoAgeEstimationResult(AgeEstimationImageResult ageEstimationResult) {
-                Log.i(TAG, "Age estimation: " + ageEstimationResult.getAgeRange());
-            }
+        resultView = findViewById(R.id.estimation_result);
+        cameraView = findViewById(R.id.video_age_estimation_view);
+        cameraView.setListener(this);
+        cameraView.onViewCreated(this, useFrontCamera/*, modelType*/);
+        cameraView.setZoomRatio(1.0f);
+    }
 
-            @Override
-            public void onImageAgeEstimationResult(AgeEstimationImageResult ageEstimationResult) {
-
+    public void updateEstimationScreen() {
+        runOnUiThread(() -> {
+            if (estimations.size() > 3) {
+                if (estimations.stream().filter(x -> x).count() > estimations.size()/2) {
+                    resultView.setText("25+");
+                } else {
+                    resultView.setText("25-");
+                }
+            } else {
+                resultView.setText(" - ");
             }
         });
+    }
 
-        ageEstimationView.initView(this);
+    public void resetScreen() {
+        estimations = new ArrayList<>();
+        updateEstimationScreen();
+    }
+
+    @Override
+    public void onAgeEstimated(float threshold, boolean isAbove) {
+        estimations.add(isAbove);
+
+        if (estimations.size() >= 10) {
+            cameraView.pauseEstimation();
+        }
+
+        updateEstimationScreen();
+    }
+
+    @Override
+    public void onEmptyScreen() {
+        resetScreen();
+    }
+
+    @Override
+    public void onFaceDetected(PointF rightEye, PointF leftEye, int imageWidth, int imageHeight) {
+        if (estimations.size() < 10) {
+            cameraView.resumeEstimations();
+        }
+    }
+
+    @Override
+    public void onFaceOrientationDetected(FaceOrientation faceOrientation) {
+
+    }
+
+    @Override
+    public void onNewPerson() {
+        cameraView.resumeEstimations();
+        resetScreen();
+    }
+
+    @Override
+    public void onPersonLeftScreen() {
+        resetScreen();
     }
 }

@@ -18,7 +18,6 @@ public class LandingActivity extends Activity {
     private final String apiKey = "";
     private final String apiSecret = "";
 
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing);
@@ -40,12 +39,10 @@ public class LandingActivity extends Activity {
         videoCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (isPermissionGranted(Manifest.permission.CAMERA) &&
-                        isPermissionGranted(Manifest.permission.RECORD_AUDIO)) {
+                if (isPermissionGranted(Manifest.permission.CAMERA)) {
                     startActivity(new Intent(LandingActivity.this, VideoActivity.class));
                 } else {
-                    requestPermissions(new String[]{Manifest.permission.CAMERA,
-                            Manifest.permission.RECORD_AUDIO}, 102);
+                    requestPermissions(new String[]{Manifest.permission.CAMERA}, 102);
                 }
             }
         });
