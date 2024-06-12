@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.PointF;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Pair;
 import android.view.WindowManager;
 import android.widget.TextView;
 
@@ -25,6 +26,7 @@ public class VideoActivity extends AppCompatActivity implements AgeEstimationLis
     private AgeEstimationView cameraView;
 
     private List<Boolean> estimations = new ArrayList<>();
+    private List<Pair<Float, Float>> ageRangeEstimations = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,10 @@ public class VideoActivity extends AppCompatActivity implements AgeEstimationLis
                 } else {
                     resultView.setText("25-");
                 }
+            } else if (ageRangeEstimations.size() > 3) {
+                float minAverage = (float)ageRangeEstimations.stream().map(x -> x.first).mapToDouble(Float::doubleValue).average().orElse(0);
+                float maxAverage = (float)ageRangeEstimations.stream().map(x -> x.second).mapToDouble(Float::doubleValue).average().orElse(0);
+                resultView.setText((int)minAverage + " - " + (int)maxAverage);
             } else {
                 resultView.setText(" - ");
             }
@@ -57,14 +63,26 @@ public class VideoActivity extends AppCompatActivity implements AgeEstimationLis
 
     public void resetScreen() {
         estimations = new ArrayList<>();
+        ageRangeEstimations = new ArrayList<>();
         updateEstimationScreen();
     }
 
     @Override
-    public void onAgeEstimated(float threshold, boolean isAbove) {
-        estimations.add(isAbove);
+    public void onThresholdAgeEstimated(float threshold, boolean isAbove) {
+        /* estimations.add(isAbove);
 
         if (estimations.size() >= 10) {
+            cameraView.pauseEstimation();
+        }
+
+        updateEstimationScreen(); */
+    }
+
+    @Override
+    public void onAgeEstimated(float minAge, float maxAge) {
+        ageRangeEstimations.add(new Pair<>(minAge, maxAge));
+
+        if (ageRangeEstimations.size() >= 10) {
             cameraView.pauseEstimation();
         }
 

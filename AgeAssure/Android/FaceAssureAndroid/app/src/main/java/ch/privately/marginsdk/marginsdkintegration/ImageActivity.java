@@ -40,6 +40,7 @@ import java.util.concurrent.Executors;
 import ch.privately.ageestimation.image.AgeEstimationListener;
 import ch.privately.ageestimation.image.FaceOrientation;
 import ch.privately.ageestimation.image.AgeEstimationResult;
+import ch.privately.ageestimation.image.FaceStatus;
 import ch.privately.ageestimation.image.ImageAgeDetector;
 
 public class ImageActivity extends AppCompatActivity {
@@ -116,15 +117,13 @@ public class ImageActivity extends AppCompatActivity {
             public void onCaptureSuccess(@NonNull ImageProxy image) {
                 super.onCaptureSuccess(image);
 
-                AgeEstimationResult estimationResult = ageDetector.isAboveTwentyFive(image.toBitmap());
+                AgeEstimationResult estimationResult = ageDetector.getAgeEstimation(image.toBitmap());
                 runOnUiThread(() -> {
                     if (estimationResult.isValid()) {
-                        estimationResultText.setText(estimationResult.isAboveThreshold() ?
-                                ((int)estimationResult.getThreshold() + "+") :
-                                ((int)estimationResult.getThreshold() + "-"));
+                        estimationResultText.setText((int)estimationResult.getMinAge() + " - " + (int)estimationResult.getMaxAge());
                         estimationResultView.setVisibility(View.VISIBLE);
                     } else {
-                        if (estimationResult.getFaceStatus() == AgeEstimationResult.FaceStatus.FACE_TOO_FAR) {
+                        if (estimationResult.getFaceStatus() == FaceStatus.FACE_TOO_FAR) {
                             Toast.makeText(ImageActivity.this, "Please come closer to the screen", Toast.LENGTH_LONG).show();
                         } else {
                             Toast.makeText(ImageActivity.this, "Please make sure your face is centered", Toast.LENGTH_LONG).show();
