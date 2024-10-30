@@ -14,7 +14,7 @@ struct VideoAgeEstimation: View {
     @StateObject private var viewModel = ViewModel()
     
     var view: some View {
-        let recorderView = VideoRecorderView(estimationMode: .advanced)
+        let recorderView = VideoRecorderView()
 
         AgeEstimationImageMain.sharedInstance().addCallback(callback: { ageEstimationResult in
             print("Estimated age range: \(ageEstimationResult.getAgeRange())")
