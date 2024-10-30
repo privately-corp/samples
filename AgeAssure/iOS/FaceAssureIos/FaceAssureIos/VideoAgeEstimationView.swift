@@ -10,15 +10,27 @@ import PrivatelyCoreIos
 import AgeEstimationImage
 
 
-struct VideoAgeEstimation: View {
+struct VideoAgeEstimation: View, AgeEstimationListener {
+    func onAgeEstimated(ageEstimationResult: AgeEstimationImage.ImageAgeEstimationResult) {
+        print("Estimated age range: \(ageEstimationResult.getAgeRange())")
+    }
+
+    func onImageProcessed(imageProcessedCount: Int, maxImageCount: Int) {
+        print("Captured \(imageProcessedCount) of \(maxImageCount) images")
+    }
+
     @StateObject private var viewModel = ViewModel()
     
     var view: some View {
-        let recorderView = VideoRecorderView()
+        let recorderView = VideoRecorderView(
+            isLivenessEnabled: true,
+            isHeadOrientationEnabled: true,
+            isMinFaceSizeEnabled: true,
+            isHeadOverlayEnabled: true,
+            minImageCount: 5
+        )
 
-        AgeEstimationImageMain.sharedInstance().addCallback(callback: { ageEstimationResult in
-            print("Estimated age range: \(ageEstimationResult.getAgeRange())")
-        })
+        AgeEstimationImageMain.sharedInstance().addCallback(callback: self)
 
         return recorderView
     }
@@ -51,7 +63,6 @@ extension VideoAgeEstimation {
         
         func authenticateSdk() {
             PrivatelyCore.sharedInstance().authenticate(apiKey: apiKey, apiSecret: apiSecret, callback: { result in
-                print("Authentication result: \(result)")
                 DispatchQueue.main.async{
                     self.isAuthenticated = true
                 }

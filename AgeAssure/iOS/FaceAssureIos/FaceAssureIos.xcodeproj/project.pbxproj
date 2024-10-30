@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D73282D6902CA085F4B40BD /* libPods-FaceAssureIos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6E72363FA68A1818F6B9960 /* libPods-FaceAssureIos.a */; };
 		2EE344302AB82C73003AC34C /* FaceAssureIosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE3442F2AB82C73003AC34C /* FaceAssureIosApp.swift */; };
 		2EE344322AB82C73003AC34C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE344312AB82C73003AC34C /* ContentView.swift */; };
 		2EE344342AB82C76003AC34C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EE344332AB82C76003AC34C /* Assets.xcassets */; };
@@ -15,7 +16,6 @@
 		2EE3444B2AB82C76003AC34C /* FaceAssureIosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE3444A2AB82C76003AC34C /* FaceAssureIosUITests.swift */; };
 		2EE3444D2AB82C76003AC34C /* FaceAssureIosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE3444C2AB82C76003AC34C /* FaceAssureIosUITestsLaunchTests.swift */; };
 		2EE3445A2AB82D70003AC34C /* VideoAgeEstimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE344592AB82D70003AC34C /* VideoAgeEstimationView.swift */; };
-		372E78D356EC980EC63B0DCF /* libPods-FaceAssureIos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F26032973995EE9CD37C3667 /* libPods-FaceAssureIos.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,9 +47,9 @@
 		2EE3444A2AB82C76003AC34C /* FaceAssureIosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceAssureIosUITests.swift; sourceTree = "<group>"; };
 		2EE3444C2AB82C76003AC34C /* FaceAssureIosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceAssureIosUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2EE344592AB82D70003AC34C /* VideoAgeEstimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAgeEstimationView.swift; sourceTree = "<group>"; };
-		773DD05EA59B4D25C59E1C4C /* Pods-FaceAssureIos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceAssureIos.release.xcconfig"; path = "Target Support Files/Pods-FaceAssureIos/Pods-FaceAssureIos.release.xcconfig"; sourceTree = "<group>"; };
-		9F28D382F90E670B58AB50C7 /* Pods-FaceAssureIos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceAssureIos.debug.xcconfig"; path = "Target Support Files/Pods-FaceAssureIos/Pods-FaceAssureIos.debug.xcconfig"; sourceTree = "<group>"; };
-		F26032973995EE9CD37C3667 /* libPods-FaceAssureIos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FaceAssureIos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8180AD58BFA1A95BCF59EFDB /* Pods-FaceAssureIos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceAssureIos.debug.xcconfig"; path = "Target Support Files/Pods-FaceAssureIos/Pods-FaceAssureIos.debug.xcconfig"; sourceTree = "<group>"; };
+		B6E72363FA68A1818F6B9960 /* libPods-FaceAssureIos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FaceAssureIos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9E6CDB8F284EE78BC25CE93 /* Pods-FaceAssureIos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceAssureIos.release.xcconfig"; path = "Target Support Files/Pods-FaceAssureIos/Pods-FaceAssureIos.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				372E78D356EC980EC63B0DCF /* libPods-FaceAssureIos.a in Frameworks */,
+				0D73282D6902CA085F4B40BD /* libPods-FaceAssureIos.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +86,7 @@
 				2EE344492AB82C76003AC34C /* FaceAssureIosUITests */,
 				2EE3442D2AB82C73003AC34C /* Products */,
 				E5BBFF8CCC4107B982A50C1F /* Pods */,
-				DF75A62D756F4D5D37F0063A /* Frameworks */,
+				F030A149968B3551CE39E82D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,21 +137,21 @@
 			path = FaceAssureIosUITests;
 			sourceTree = "<group>";
 		};
-		DF75A62D756F4D5D37F0063A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F26032973995EE9CD37C3667 /* libPods-FaceAssureIos.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		E5BBFF8CCC4107B982A50C1F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9F28D382F90E670B58AB50C7 /* Pods-FaceAssureIos.debug.xcconfig */,
-				773DD05EA59B4D25C59E1C4C /* Pods-FaceAssureIos.release.xcconfig */,
+				8180AD58BFA1A95BCF59EFDB /* Pods-FaceAssureIos.debug.xcconfig */,
+				C9E6CDB8F284EE78BC25CE93 /* Pods-FaceAssureIos.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F030A149968B3551CE39E82D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6E72363FA68A1818F6B9960 /* libPods-FaceAssureIos.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,11 +161,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2EE344502AB82C76003AC34C /* Build configuration list for PBXNativeTarget "FaceAssureIos" */;
 			buildPhases = (
-				5876FF66FA86124408B4E679 /* [CP] Check Pods Manifest.lock */,
+				080B2F4D371F8489C8A3E50A /* [CP] Check Pods Manifest.lock */,
 				2EE344282AB82C73003AC34C /* Sources */,
 				2EE344292AB82C73003AC34C /* Frameworks */,
 				2EE3442A2AB82C73003AC34C /* Resources */,
-				B4A8196A5D29C133EB943561 /* [CP] Embed Pods Frameworks */,
+				9DAC55C098B4E7300BC40F78 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -282,7 +282,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5876FF66FA86124408B4E679 /* [CP] Check Pods Manifest.lock */ = {
+		080B2F4D371F8489C8A3E50A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -304,7 +304,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B4A8196A5D29C133EB943561 /* [CP] Embed Pods Frameworks */ = {
+		9DAC55C098B4E7300BC40F78 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -483,7 +483,7 @@
 		};
 		2EE344512AB82C76003AC34C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9F28D382F90E670B58AB50C7 /* Pods-FaceAssureIos.debug.xcconfig */;
+			baseConfigurationReference = 8180AD58BFA1A95BCF59EFDB /* Pods-FaceAssureIos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -514,7 +514,7 @@
 		};
 		2EE344522AB82C76003AC34C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 773DD05EA59B4D25C59E1C4C /* Pods-FaceAssureIos.release.xcconfig */;
+			baseConfigurationReference = C9E6CDB8F284EE78BC25CE93 /* Pods-FaceAssureIos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

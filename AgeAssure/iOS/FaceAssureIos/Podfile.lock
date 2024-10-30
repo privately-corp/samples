@@ -1,0 +1,39 @@
+PODS:
+  - AgeEstimationImage (1.0.2):
+    - PrivatelyCoreIos (= 1.0.0)
+    - TensorFlowLiteObjC (~> 2.11.0)
+    - TensorFlowLiteSwift (~> 2.11.0)
+  - PrivatelyCoreIos (1.0.0)
+  - TensorFlowLiteC (2.11.0):
+    - TensorFlowLiteC/Core (= 2.11.0)
+  - TensorFlowLiteC/Core (2.11.0)
+  - TensorFlowLiteObjC (2.11.0):
+    - TensorFlowLiteObjC/Core (= 2.11.0)
+  - TensorFlowLiteObjC/Core (2.11.0):
+    - TensorFlowLiteC (= 2.11.0)
+  - TensorFlowLiteSwift (2.11.0):
+    - TensorFlowLiteSwift/Core (= 2.11.0)
+  - TensorFlowLiteSwift/Core (2.11.0):
+    - TensorFlowLiteC (= 2.11.0)
+
+DEPENDENCIES:
+  - AgeEstimationImage (~> 1.0.2)
+
+SPEC REPOS:
+  trunk:
+    - AgeEstimationImage
+    - PrivatelyCoreIos
+    - TensorFlowLiteC
+    - TensorFlowLiteObjC
+    - TensorFlowLiteSwift
+
+SPEC CHECKSUMS:
+  AgeEstimationImage: 0595a7e8f51647653b7a884522bbc7d36a58d60c
+  PrivatelyCoreIos: 1f0ab99a3a5a319c1466ea267b5223d6aa5444dc
+  TensorFlowLiteC: 8a8cb6fa20ad74dff29b5e490d02c36a14d48148
+  TensorFlowLiteObjC: 01e40bff9009046b9dc20c213dd6c6781360f181
+  TensorFlowLiteSwift: 1a5cd776a377f8d7a009b16f5904fdf91a8debfa
+
+PODFILE CHECKSUM: 0adebd84303ac8af892b30de46650a59ff237ef0
+
+COCOAPODS: 1.15.2
