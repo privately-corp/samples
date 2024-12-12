@@ -52,9 +52,9 @@ public sealed class FaceMeshSample : MonoBehaviour
         }
 
         ageEstimator = new AgeEstimator();
-        // ageEstimator.Authenticate(apiKey, apiSecret);
-        startEstimation(jwtToken);
-        // ageEstimator.SetUseLiveness(useLiveness);
+        ageEstimator.Authenticate(apiKey, apiSecret);
+        // startEstimation(jwtToken);
+        ageEstimator.SetUseLiveness(useLiveness);
 
         Button btn = yourButton.GetComponent<Button>();
 		Text buttonText = btn.GetComponentInChildren<Text>();
@@ -67,8 +67,7 @@ public sealed class FaceMeshSample : MonoBehaviour
 
     private async void startEstimation(string jwtToken)
     {
-        var response = await ageEstimator.StartEstimation(jwtToken);
-        Debug.Log(response);
+        var response = await ageEstimator.Authenticate(jwtToken);
     }
 
     private void OnDestroy()
@@ -79,7 +78,7 @@ public sealed class FaceMeshSample : MonoBehaviour
 
     private void Update()
     {
-
+        // DrawResults(detectionResult, meshResult);
     }
 
     public void ToggleLiveness()
