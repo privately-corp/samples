@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FaceAssureHeadless Age Estimation SDK — Browser Integration Demo</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: #111;
+      color: #f5f5f5;
+    }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 24px;
+    }
+    .panel {
+      background: #1b1b1b;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .preview {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: #000;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scaleX(-1);
+    }
+    button {
+      margin-right: 8px;
+      margin-top: 12px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background: #222;
+      color: inherit;
+      cursor: pointer;
+    }
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #aaa;
+      margin-bottom: 6px;
+    }
+    .value {
+      min-height: 1.5em;
+      word-break: break-word;
+    }
+    .log {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px;
+      white-space: pre-wrap;
+      max-height: 280px;
+      overflow: auto;
+      background: #0d0d0d;
+      border-radius: 8px;
+      padding: 12px;
+      border: 1px solid #2a2a2a;
+    }
+    .hint-warning { color: #fbbf24; }
+    .hint-blocking { color: #f87171; }
+    .hint-info { color: #93c5fd; }
+    .auth-panel {
+      margin-bottom: 24px;
+    }
+    .auth-mode {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .auth-mode label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .field-label {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #aaa;
+      margin: 12px 0 6px;
+    }
+    .field-label:first-child {
+      margin-top: 0;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="number"],
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background: #0d0d0d;
+      color: inherit;
+      font: inherit;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 88px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px;
+    }
+    .auth-hint {
+      margin: 8px 0 0;
+      font-size: 13px;
+      color: #888;
+      line-height: 1.4;
+    }
+    .auth-fields[hidden] {
+      display: none;
+    }
+    .feature-toggles {
+      display: flex;
+      gap: 16px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+    .feature-toggles label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    @media (max-width: 900px) {
+      main { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <section class="panel auth-panel" style="max-width: 1100px; margin: 0 auto 24px;">
+    <div class="label">Authentication</div>
+    <div class="auth-mode">
+      <label>
+        <input type="radio" name="authMode" id="authModeSession" value="session" checked>
+        Session credentials
+      </label>
+      <label>
+        <input type="radio" name="authMode" id="authModeToken" value="token">
+        JWT token
+      </label>
+    </div>
+
+    <div id="sessionFields" class="auth-fields">
+      <label class="field-label" for="sessionIdInput">Session ID</label>
+      <input type="text" id="sessionIdInput" autocomplete="off" spellcheck="false" placeholder="api_key / session UUID">
+
+      <label class="field-label" for="sessionPasswordInput">Session password</label>
+      <input type="password" id="sessionPasswordInput" autocomplete="off" spellcheck="false" placeholder="api_secret">
+    </div>
+
+    <div id="tokenFields" class="auth-fields" hidden>
+      <label class="field-label" for="tokenInput">JWT token</label>
+      <textarea id="tokenInput" placeholder="Paste a pre-issued Privately session JWT"></textarea>
+    </div>
+
+    <label class="field-label" for="ageGateInput">Requested age gate</label>
+    <input type="number" id="ageGateInput" min="0" max="99" value="25">
+
+    <div class="field-label">Liveness features</div>
+    <div class="feature-toggles">
+      <label>
+        <input type="checkbox" id="captureWithActiveLivenessInput" checked>
+        Active liveness (captureWithActiveLiveness)
+      </label>
+      <label>
+        <input type="checkbox" id="passiveLivenessInput" checked>
+        Passive liveness
+      </label>
+    </div>
+
+    <p class="auth-hint">
+      Provide either session ID + password, or a JWT token. Values are stored in this browser only (localStorage) for convenience.
+      See README.md for production integration guidance.
+    </p>
+  </section>
+
+  <main>
+    <section class="panel">
+      <div class="preview">
+        <video id="preview" autoplay playsinline muted></video>
+      </div>
+      <div>
+        <button id="startBtn">Start age check</button>
+        <button id="stopBtn" disabled>Stop</button>
+        <button id="retryBtn" disabled>Retry with new session</button>
+      </div>
+      <p id="statusLine">Loading SDK bundle…</p>
+    </section>
+
+    <section class="panel">
+      <div class="label">Pipeline state</div>
+      <div class="value" id="stateValue">IDLE</div>
+
+      <div class="label" style="margin-top: 16px;">Guidance / liveness</div>
+      <div class="value" id="guidanceValue">—</div>
+
+      <div class="label" style="margin-top: 16px;">Result</div>
+      <div class="value" id="resultValue">—</div>
+
+      <div class="label" style="margin-top: 16px;">Event log</div>
+      <div class="log" id="eventLog"></div>
+    </section>
+  </main>
+
+  <!-- Replace with the CDN URL provided by Privately for your environment -->
+  <script
+    src="https://YOUR_CDN_HOST/path/to/headless-sdk.js"
+    onerror="window.__headlessSdkBundleFailed = true"
+  ></script>
+  <script src="rawdemoclient.js"></script>
+</body>
+</html>
