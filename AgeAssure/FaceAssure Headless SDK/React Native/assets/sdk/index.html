@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Headless SDK Host</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      overflow: hidden;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    #preview {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scaleX(-1);
+      background: #000;
+    }
+    #overlay {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 12px;
+      color: #fff;
+      background: linear-gradient(transparent, rgba(0,0,0,0.75));
+      font-size: 14px;
+      pointer-events: none;
+    }
+    #guidance {
+      font-weight: 600;
+    }
+    #state {
+      opacity: 0.8;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+  <video id="preview" autoplay playsinline muted></video>
+  <div id="overlay">
+    <div id="guidance">Waiting for session…</div>
+    <div id="state">IDLE</div>
+  </div>
+
+  <script src="./headless-sdk.js" onerror="postToNative({ type: 'error', code: 'BUNDLE_LOAD_FAILED', message: 'Could not load headless-sdk.js' })"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      var preview = document.getElementById('preview');
+      var guidanceEl = document.getElementById('guidance');
+      var stateEl = document.getElementById('state');
+      var activeStream = null;
+      var activeSdk = null;
+      var sdkReadyPromise = null;
+
+      function postToNative(payload) {
+        var json = JSON.stringify(payload);
+        if (window.ReactNativeWebView && window.ReactNativeWebView.postMessage) {
+          window.ReactNativeWebView.postMessage(json);
+        }
+      }
+
+      function log(message) {
+        postToNative({ type: 'log', message: message });
+      }
+
+      function getSdkConstructor() {
+        return typeof window.HeadlessSDK === 'function' ? window.HeadlessSDK : null;
+      }
+
+      function waitForSdkConstructor(timeoutMs) {
+        var limit = timeoutMs == null ? 20000 : timeoutMs;
+        var existing = getSdkConstructor();
+        if (existing) return Promise.resolve(existing);
+
+        if (!sdkReadyPromise) {
+          sdkReadyPromise = new Promise(function (resolve, reject) {
+            var deadline = Date.now() + limit;
+            (function poll() {
+              var sdk = getSdkConstructor();
+              if (sdk) {
+                resolve(sdk);
+                return;
+              }
+              if (Date.now() >= deadline) {
+                sdkReadyPromise = null;
+                reject(new Error('HeadlessSDK did not become available.'));
+                return;
+              }
+              window.setTimeout(poll, 50);
+            })();
+          });
+        }
+        return sdkReadyPromise;
+      }
+
+      function stopCameraStream() {
+        if (!activeStream) return;
+        activeStream.getTracks().forEach(function (track) { track.stop(); });
+        activeStream = null;
+        preview.srcObject = null;
+      }
+
+      async function acquireCameraStream() {
+        if (activeStream) return activeStream;
+        activeStream = await navigator.mediaDevices.getUserMedia({
+          video: {
+            facingMode: 'user',
+            width: { ideal: 1280 },
+            height: { ideal: 720 },
+          },
+        });
+        preview.srcObject = activeStream;
+        return activeStream;
+      }
+
+      function buildSdkConfig(auth) {
+        return {
+          transactionId: auth.transactionId,
+          requestedAgeGate: auth.requestedAgeGate,
+          features: auth.features || {},
+          token: auth.token,
+          sessionId: auth.sessionId,
+          sessionPassword: auth.sessionPassword,
+          onLoadProgress: function (event) {
+            postToNative({
+              type: 'loadProgress',
+              module: event.module,
+              progress: event.progress,
+            });
+          },
+          onReady: function () {
+            postToNative({ type: 'ready' });
+          },
+          onGuidance: function (event) {
+            guidanceEl.textContent = event.code;
+            postToNative({ type: 'guidance', code: event.code, severity: event.severity });
+          },
+          onLiveness: function (event) {
+            if (event.phase === 'instruction' || event.phase === 'in_progress' || event.phase === 'failed') {
+              guidanceEl.textContent = event.code;
+            }
+            postToNative({ type: 'liveness', phase: event.phase, code: event.code });
+          },
+          onState: function (event) {
+            stateEl.textContent = event.current;
+            postToNative({ type: 'state', previous: event.previous, current: event.current });
+          },
+          onResult: function (result) {
+            postToNative({ type: 'result', result: result });
+          },
+          onTelemetry: function (event) {
+            postToNative({ type: 'telemetry', phase: event.phase });
+          },
+          onError: function (error) {
+            postToNative({ type: 'error', code: error.code, message: error.message });
+          },
+          onWarn: function (warning) {
+            postToNative({ type: 'warn', code: warning.code, message: warning.message });
+          },
+          onDestroyed: function (event) {
+            stopCameraStream();
+            activeSdk = null;
+            postToNative({ type: 'destroyed', reason: event.reason });
+          },
+        };
+      }
+
+      async function runAgeCheck(auth) {
+        if (activeSdk) {
+          log('Stopping previous session before starting a new one');
+          try { activeSdk.stop(); } catch (e) { /* ignore */ }
+        }
+
+        var SdkConstructor = await waitForSdkConstructor();
+        var sdk = new SdkConstructor(buildSdkConfig(auth));
+        activeSdk = sdk;
+
+        postToNative({ type: 'sessionStarted', transactionId: auth.transactionId });
+        await sdk.ready();
+        await acquireCameraStream();
+        await sdk.attachVideo(preview);
+        await sdk.start();
+        await sdk.getResult();
+      }
+
+      function handleNativeMessage(raw) {
+        var message;
+        try {
+          message = typeof raw === 'string' ? JSON.parse(raw) : raw;
+        } catch (error) {
+          log('Invalid message from native: ' + String(raw));
+          return;
+        }
+
+        if (message.type === 'start') {
+          runAgeCheck(message.auth).catch(function (error) {
+            postToNative({
+              type: 'error',
+              code: 'RUN_FAILED',
+              message: error && error.message ? error.message : String(error),
+            });
+          });
+          return;
+        }
+
+        if (message.type === 'stop' && activeSdk) {
+          log('Native requested stop()');
+          activeSdk.stop();
+        }
+      }
+
+      document.addEventListener('message', function (event) {
+        handleNativeMessage(event.data);
+      });
+      window.addEventListener('message', function (event) {
+        handleNativeMessage(event.data);
+      });
+
+      waitForSdkConstructor()
+        .then(function () {
+          postToNative({ type: 'hostReady' });
+        })
+        .catch(function (error) {
+          postToNative({ type: 'error', code: 'SDK_UNAVAILABLE', message: error.message });
+        });
+    })();
+  </script>
+</body>
+</html>

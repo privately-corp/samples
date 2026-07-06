@@ -1,0 +1,17 @@
+node_modules/
+.expo/
+dist/
+android/
+ios/
+*.jks
+*.keystore
+.DS_Store
+
+# Local auth values should never be committed
+.env
+.env.*
+
+# Licensed SDK binaries — obtain from your FaceAssure distribution package
+assets/sdk/*.wasm
+assets/sdk/*.bundle
+assets/sdk/headless-sdk.js

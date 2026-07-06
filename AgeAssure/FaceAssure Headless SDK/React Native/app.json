@@ -1,0 +1,45 @@
+{
+  "expo": {
+    "name": "Headless SDK Demo",
+    "slug": "headless-sdk-react-native",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "scheme": "headless-sdk-demo",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.privately.headlesssdkdemo",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Camera access is required for facial age estimation.",
+        "NSMicrophoneUsageDescription": "Microphone access may be requested by the embedded browser engine."
+      }
+    },
+    "android": {
+      "package": "com.privately.headlesssdkdemo",
+      "adaptiveIcon": {
+        "backgroundColor": "#111111",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.INTERNET"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": true
+          }
+        }
+      ]
+    ],
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}

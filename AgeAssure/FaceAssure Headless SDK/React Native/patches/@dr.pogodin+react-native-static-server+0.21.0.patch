@@ -1,0 +1,161 @@
+diff --git a/node_modules/@dr.pogodin/react-native-static-server/android/src/main/java/com/drpogodin/reactnativestaticserver/ReactNativeStaticServerPackage.kt b/node_modules/@dr.pogodin/react-native-static-server/android/src/main/java/com/drpogodin/reactnativestaticserver/ReactNativeStaticServerPackage.kt
+index 62838b3..d77b660 100644
+--- a/node_modules/@dr.pogodin/react-native-static-server/android/src/main/java/com/drpogodin/reactnativestaticserver/ReactNativeStaticServerPackage.kt
++++ b/node_modules/@dr.pogodin/react-native-static-server/android/src/main/java/com/drpogodin/reactnativestaticserver/ReactNativeStaticServerPackage.kt
+@@ -22,10 +22,11 @@ class ReactNativeStaticServerPackage : BaseReactPackage() {
+       moduleInfos[ReactNativeStaticServerModule.NAME] = ReactModuleInfo(
+         ReactNativeStaticServerModule.NAME,
+         ReactNativeStaticServerModule.NAME,
+-        canOverrideExistingModule = false,  // canOverrideExistingModule
+-        needsEagerInit = false,  // needsEagerInit
+-        isCxxModule = false,  // isCxxModule
+-        isTurboModule = true // isTurboModule
++        false,
++        false,
++        false,
++        false,
++        false,
+       )
+       moduleInfos
+     }
+diff --git a/node_modules/@dr.pogodin/react-native-static-server/lib/module/config.js b/node_modules/@dr.pogodin/react-native-static-server/lib/module/config.js
+index 9071e07..5f45191 100644
+--- a/node_modules/@dr.pogodin/react-native-static-server/lib/module/config.js
++++ b/node_modules/@dr.pogodin/react-native-static-server/lib/module/config.js
+@@ -2,13 +2,13 @@
+ 
+ // Encapsulates the standard Lighttpd configuration for the library.
+ 
+-import { mkdir, TemporaryDirectoryPath, writeFile } from '@dr.pogodin/react-native-fs';
++import * as FileSystem from 'expo-file-system';
+ 
+ /**
+  * Filesystem location where the library will keep its working files (configs,
+  * logs, uploads) for the app.
+  */
+-export const WORK_DIR = `${TemporaryDirectoryPath}/__rn-static-server__`;
++export const WORK_DIR = `${(FileSystem.cacheDirectory || '').replace(/^file:\/\//, '')}__rn-static-server__`;
+ 
+ /**
+  * Filesystem location for the error log file.
+@@ -20,14 +20,13 @@ export const ERROR_LOG_FILE = `${WORK_DIR}/errorlog.txt`;
+  */
+ export const UPLOADS_DIR = `${WORK_DIR}/uploads`;
+ 
+-/**
+- * Options for error log, they mirror debug options of Lighttpd config:
+- * https://redmine.lighttpd.net/projects/lighttpd/wiki/DebugVariables
+- */
++async function mkdir(path) {
++  await FileSystem.makeDirectoryAsync(`file://${path}`, { intermediates: true });
++}
+ 
+-/**
+- * Options for the standard Lighttpd configuration for the library.
+- */
++async function writeFile(path, contents) {
++  await FileSystem.writeAsStringAsync(`file://${path}`, contents);
++}
+ 
+ /**
+  * Generates a fragment of Lighttpd config related to error and debug logging.
+@@ -47,11 +46,6 @@ function errorLogConfig(errorLogOptions) {
+     if (ops.requestHeader) enable('request-header');
+     if (ops.requestHeaderOnError) enable('request-header-on-error');
+     if (ops.responseHeader) enable('response-header');
+-
+-    // Not a valid option, without TLS module (see more details in a comment
+-    // earlier in the file).
+-    // if (ops.sslNoise) enable('ssl-noise');
+-
+     if (ops.timeouts) enable('timeouts');
+   } else res.push('server.errorlog-use-syslog = "enable"');
+   return res.join('\n');
+@@ -97,8 +91,7 @@ function standardConfig({
+  * @return {Promise<string>} Resolves to the name of the created config file.
+  */
+ export async function newStandardConfigFile(options) {
+-  // NOTE: Lighttpd exits with error right away if the specified uploads
+-  // directory does not exist.
++  await mkdir(WORK_DIR);
+   await mkdir(UPLOADS_DIR);
+   const configFile = `${WORK_DIR}/config-${Date.now()}.txt`;
+   await writeFile(configFile, standardConfig(options), 'utf8');
+diff --git a/node_modules/@dr.pogodin/react-native-static-server/lib/module/index.js b/node_modules/@dr.pogodin/react-native-static-server/lib/module/index.js
+index 7cf1282..1e7d8d7 100644
+--- a/node_modules/@dr.pogodin/react-native-static-server/lib/module/index.js
++++ b/node_modules/@dr.pogodin/react-native-static-server/lib/module/index.js
+@@ -1,7 +1,7 @@
+ "use strict";
+ 
+ import { AppState, NativeEventEmitter, Platform } from 'react-native';
+-import { copyFileAssets, DocumentDirectoryPath, mkdir, readDirAssets, unlink } from '@dr.pogodin/react-native-fs';
++import * as FileSystem from 'expo-file-system';
+ import { Emitter, Semaphore } from '@dr.pogodin/js-utils';
+ import { ERROR_LOG_FILE, newStandardConfigFile } from "./config.js";
+ import { SIGNALS, STATES } from "./constants.js";
+@@ -172,7 +172,7 @@ class StaticServer {
+       // in case the caller does not await for this method to complete.
+       this._configPath = undefined;
+       try {
+-        await unlink(p);
++        await FileSystem.deleteAsync(`file://${p}`, { idempotent: true });
+       } catch {
+         // IGNORE
+       }
+@@ -366,16 +366,8 @@ export default StaticServer;
+  *  structure. By default all bundled assets will be extracted.
+  * @return {Promise} Resolves once unpacking is completed.
+  */
+-export async function extractBundledAssets(into = DocumentDirectoryPath, from = '') {
+-  console.warn('extractBundledAssets() is deprecated! See: https://github.com/birdofpreyru/react-native-static-server?tab=readme-ov-file#extractbundledassets');
+-  if (Platform.OS !== 'android') return;
+-  await mkdir(into);
+-  const assets = await readDirAssets(from);
+-  for (let i = 0; i < assets.length; ++i) {
+-    const asset = assets[i];
+-    const target = `${into}/${asset.name}`;
+-    if (asset.isDirectory()) await extractBundledAssets(target, asset.path);else await copyFileAssets(asset.path, target);
+-  }
++export async function extractBundledAssets() {
++  throw new Error('extractBundledAssets is not supported in this Expo build. Copy assets with expo-file-system instead.');
+ }
+ 
+ /**
+diff --git a/node_modules/@dr.pogodin/react-native-static-server/lib/module/utils.js b/node_modules/@dr.pogodin/react-native-static-server/lib/module/utils.js
+index c6f4a9e..9dbbf93 100644
+--- a/node_modules/@dr.pogodin/react-native-static-server/lib/module/utils.js
++++ b/node_modules/@dr.pogodin/react-native-static-server/lib/module/utils.js
+@@ -1,7 +1,7 @@
+ "use strict";
+ 
+ import { Platform } from 'react-native';
+-import { DocumentDirectoryPath, MainBundlePath } from '@dr.pogodin/react-native-fs';
++import * as FileSystem from 'expo-file-system';
+ import { IS_MAC_CATALYST } from "./constants.js";
+ function getPlatform() {
+   switch (Platform.OS) {
+@@ -17,10 +17,10 @@ function getPlatform() {
+ }
+ const PLATFORM = getPlatform();
+ const BASE_ASSET_DIRS = {
+-  ANDROID: DocumentDirectoryPath,
+-  IOS: MainBundlePath || '',
+-  MACOS: `${MainBundlePath}/Contents/Resources`,
+-  WINDOWS: MainBundlePath || ''
++  ANDROID: FileSystem.documentDirectory || '',
++  IOS: FileSystem.bundleDirectory || '',
++  MACOS: `${FileSystem.bundleDirectory || ''}/Contents/Resources`,
++  WINDOWS: FileSystem.bundleDirectory || ''
+ };
+ const BASE_ASSET_DIR = BASE_ASSET_DIRS[PLATFORM];
+ const SEP = PLATFORM === 'WINDOWS' ? '\\' : '/';
+@@ -48,6 +48,7 @@ function isAbsolutePath(path) {
+  * @return Absolute path.
+  */
+ export function resolveAssetsPath(path) {
+-  return isAbsolutePath(path) ? path : `${BASE_ASSET_DIR}${SEP}${path}`;
++  const resolved = isAbsolutePath(path) ? path : `${BASE_ASSET_DIR}${SEP}${path}`;
++  return resolved.replace(/^file:\/\//, '');
+ }
+ //# sourceMappingURL=utils.js.map

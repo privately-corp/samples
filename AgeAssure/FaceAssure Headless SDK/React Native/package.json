@@ -1,0 +1,35 @@
+{
+  "name": "headless-sdk-react-native",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "prebuild": "expo prebuild",
+    "build:android": "cd android && ./gradlew assembleRelease",
+    "copy-sdk-assets": "bash scripts/copy-sdk-assets.sh",
+    "generate-sdk-assets": "node scripts/generate-sdk-assets.mjs",
+    "reset-sdk-assets-manifest": "node scripts/generate-sdk-assets.mjs --stub",
+    "postinstall": "patch-package"
+  },
+  "dependencies": {
+    "@dr.pogodin/react-native-static-server": "^0.21.0",
+    "@react-native-async-storage/async-storage": "1.23.1",
+    "expo": "~52.0.47",
+    "expo-asset": "~11.0.5",
+    "expo-build-properties": "~0.13.3",
+    "expo-file-system": "~18.0.12",
+    "expo-status-bar": "~2.0.1",
+    "react": "18.3.1",
+    "react-native": "0.76.9",
+    "react-native-safe-area-context": "4.12.0",
+    "react-native-webview": "13.12.5"
+  },
+  "devDependencies": {
+    "@types/react": "~18.3.12",
+    "patch-package": "^8.0.1",
+    "typescript": "~5.9.2"
+  },
+  "private": true
+}
