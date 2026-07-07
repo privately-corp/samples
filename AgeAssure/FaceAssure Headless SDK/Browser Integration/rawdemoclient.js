@@ -22,7 +22,6 @@
     HEAD_TILTED_RIGHT: "Straighten your head",
     IMAGE_NOT_BRIGHT_ENOUGH: "Find better lighting",
     IMAGE_TOO_BLURRY: "Clean camera lens",
-    CONTRE_JOUR_DETECTED: "Avoid backlighting",
     VALID_CAPTURE_STATE: "Hold steady",
     IMAGE_QUALITY_SUFFICIENT: "Checking quality…",
     OPEN_YOUR_MOUTH: "Open your mouth",

@@ -9,10 +9,52 @@ This folder contains a minimal browser integration you can use as a starting poi
 | File | Purpose |
 |---|---|
 | `index.html` | Page layout, camera preview, and script tags |
-| `rawdemoclient.js` | Integration logic — auth, SDK lifecycle, callbacks, camera handling |
-| `README.md` | This guide |
+| `rawdemoclient.js` | **Canonical lifecycle** — auth, SDK callbacks, `runAgeCheck()` |
+| `README.md` | Human-oriented integration guide (this file) |
+| `AGENTS.md` | Agent brief — rules for AI-assisted integration |
+| `API_QUICK_REFERENCE.md` | Condensed API (callbacks, codes, config) |
+| `INTEGRATION_TASKS.md` | Copy-paste prompts per scenario |
+| `CHECKLIST.md` | Definition of done / acceptance tests |
+| `ANTI_PATTERNS.md` | Common mistakes to avoid |
+| `data/guidance-codes.en.json` | Default user-facing copy for SDK codes |
+| `data/error-codes.json` | Default messages for warn/error/destroyed |
+| `llms.txt` | Doc index for LLM-aware tools |
+| `prompts/` | Individual task prompts |
+| `.cursor/skills/faceassure-headless-sdk/` | Cursor Agent Skill (optional) |
+| `.github/copilot-instructions.md` | GitHub Copilot pointer |
 
 Open `index.html` over **HTTPS** (or `localhost` during development). Camera access requires a [secure context](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts).
+
+---
+
+## Agent-assisted integration (AI / IDE)
+
+If you use Cursor, GitHub Copilot, Claude Code, Windsurf, or similar:
+
+1. Open this folder in your IDE (or copy it into your project).
+2. Ask your agent to read **`AGENTS.md`** first, then **`rawdemoclient.js`**.
+3. Pick a scenario from **`INTEGRATION_TASKS.md`** (or `prompts/`).
+4. Verify the result with **`CHECKLIST.md`**.
+
+**Starter prompt:**
+
+```
+Read AGENTS.md and rawdemoclient.js in the Browser Integration pack.
+Integrate HeadlessSDK into my app following the documented lifecycle.
+Fetch JWTs from my backend at /api/age-check/session.
+Map guidance codes via data/guidance-codes.en.json.
+Follow ANTI_PATTERNS.md and complete CHECKLIST.md when done.
+```
+
+Tool-specific entry points:
+
+| Tool | File |
+|------|------|
+| Any agent | `AGENTS.md` |
+| Cursor | `.cursor/skills/faceassure-headless-sdk/SKILL.md` |
+| GitHub Copilot | `.github/copilot-instructions.md` |
+| Claude Code | `CLAUDE.md` |
+| Doc-aware LLMs | `llms.txt` |
 
 ---
 
@@ -196,7 +238,7 @@ The SDK emits stable string **codes**. Map them to your copy — the demo uses `
 | `VALID_CAPTURE_STATE` | Hold steady |
 | … | See `GUIDANCE_COPY` for the full list |
 
-`event.severity` is `info`, `warning`, or `blocking`.
+`event.severity` is `info` or `warning`.
 
 ### `onLiveness` — active and passive liveness
 
@@ -233,8 +275,11 @@ The **signed** verification JWT is delivered to your **server** via webhook, not
 
 ### `onError` / `onWarn`
 
-- **`onError`** — `error.recoverable === true` for cases like `MULTIPLE_FACES_DETECTED` where the user can adjust and continue.
-- **`onWarn`** — non-fatal media readiness (e.g. stream attached but frames not ready yet).
+- **`onError`** — terminal or blocking issues (`PRESENTATION_ATTACK_DETECTED`, `PROCESS_TIMEOUT`, etc.). Check `error.recoverable` where applicable.
+- **`onWarn`** — non-fatal conditions that clear automatically when resolved:
+  - `MEDIA_STREAM_NOT_AVAILABLE` — no usable video track
+  - `AWAITING_MEDIA_READY` — stream attached but frames not yet available
+  - `MULTIPLE_FACES_DETECTED` — more than one confident face in frame; clears when only one face remains
 
 ### `onDestroyed` — session ended
 
@@ -358,6 +403,10 @@ async function runAgeCheck(authFromBackend) {
 
 ## 12. Further reference
 
-Privately provides a full API reference (callbacks, error codes, JWT claims, webhook schema, and `rsn` completion reasons) separately from this bundle. Use this README and the demo sources together as the browser integration starting point.
+| Resource | Purpose |
+|----------|---------|
+| `API_QUICK_REFERENCE.md` | In-pack API cheat sheet (v1.10.32) |
+| `INTEGRATION_TASKS.md` | AI prompts for common integration tasks |
+| Privately Confluence / onboarding | Full API, JWT claims, `rsn` codes, webhook setup |
 
 For questions about CDN URLs, credentials, or webhook setup, contact your Privately integration contact.

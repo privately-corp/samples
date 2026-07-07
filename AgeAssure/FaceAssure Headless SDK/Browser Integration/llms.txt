@@ -1,0 +1,25 @@
+# FaceAssure Headless SDK — Browser Integration
+
+> Agent brief for AI-assisted implementation. Read this first.
+
+## Primary docs
+
+- [AGENTS.md](AGENTS.md) — rules, lifecycle, file map
+- [API_QUICK_REFERENCE.md](API_QUICK_REFERENCE.md) — config, callbacks, codes
+- [INTEGRATION_TASKS.md](INTEGRATION_TASKS.md) — copy-paste prompts
+- [CHECKLIST.md](CHECKLIST.md) — definition of done
+- [ANTI_PATTERNS.md](ANTI_PATTERNS.md) — common mistakes
+
+## Reference code
+
+- [rawdemoclient.js](rawdemoclient.js) — canonical `runAgeCheck()` lifecycle
+- [index.html](index.html) — script loading and demo UI
+
+## Data
+
+- [data/guidance-codes.en.json](data/guidance-codes.en.json) — guidance + liveness copy
+- [data/error-codes.json](data/error-codes.json) — warn, error, destroyed messages
+
+## Version
+
+SDK v1.10.32 — FaceAssure Headless SDK (CDN bundle, global `HeadlessSDK`)

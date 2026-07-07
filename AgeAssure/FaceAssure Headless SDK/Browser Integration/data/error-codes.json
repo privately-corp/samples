@@ -1,0 +1,30 @@
+{
+  "onWarn": {
+    "MEDIA_STREAM_NOT_AVAILABLE": "Camera stream is not available. Check permissions and try again.",
+    "AWAITING_MEDIA_READY": "Starting camera…",
+    "MULTIPLE_FACES_DETECTED": "Only one person should be in the frame"
+  },
+  "onError": {
+    "PRESENTATION_ATTACK_DETECTED": "Verification could not be completed. Please try again.",
+    "VIRTUAL_CAMERA_DETECTED": "Virtual camera detected. Please use your device camera.",
+    "PASSIVE_LIVENESS_ATTACK_DETECTED": "Verification could not be completed. Please try again.",
+    "INFERENCE_FAILED": "Age check could not be completed. Please try again.",
+    "PROCESS_TIMEOUT": "Time limit reached. Please try again.",
+    "AUTHENTICATION_FAILED": "Session expired or invalid. Please refresh and try again.",
+    "BACKEND_ERROR": "A server error occurred. Please try again later.",
+    "UNSUPPORTED_ENVIRONMENT": "This browser is not supported. Please try a different browser."
+  },
+  "onDestroyed": {
+    "success": "Age check complete",
+    "failure": "Age check did not complete",
+    "timeout": "Age check timed out",
+    "user_cancelled": "Age check cancelled",
+    "liveness_failed": "Liveness check failed",
+    "error": "An error ended the session"
+  },
+  "readyRejection": {
+    "AUTHENTICATION_FAILED": "Authentication failed. Check credentials or token.",
+    "MODEL_LOAD_FAILED": "Could not load verification models. Check network and try again.",
+    "INSTANCE_DESTROYED": "Session already ended."
+  }
+}
