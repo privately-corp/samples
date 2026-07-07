@@ -1,0 +1,27 @@
+# FaceAssure Headless SDK — React Native Integration
+
+> Agent brief for AI-assisted mobile implementation. Read this first.
+
+## Primary docs
+
+- [AGENTS.md](AGENTS.md) — rules, architecture, file map
+- [API_QUICK_REFERENCE.md](API_QUICK_REFERENCE.md) — SDK API, bridge protocol, codes
+- [INTEGRATION_TASKS.md](INTEGRATION_TASKS.md) — copy-paste prompts
+- [CHECKLIST.md](CHECKLIST.md) — definition of done
+- [ANTI_PATTERNS.md](ANTI_PATTERNS.md) — common mistakes
+
+## Reference code
+
+- [assets/sdk/index.html](assets/sdk/index.html) — canonical WebView host (`runAgeCheck`, `buildSdkConfig`)
+- [src/components/HeadlessSdkWebView.tsx](src/components/HeadlessSdkWebView.tsx) — RN ↔ WebView bridge
+- [src/hooks/useSdkServer.ts](src/hooks/useSdkServer.ts) — localhost static server + asset copy
+- [src/screens/AgeCheckScreen.tsx](src/screens/AgeCheckScreen.tsx) — example RN UI
+
+## Data
+
+- [data/guidance-codes.en.json](data/guidance-codes.en.json) — guidance + liveness copy
+- [data/error-codes.json](data/error-codes.json) — warn, error, destroyed messages
+
+## Version
+
+SDK v1.10.32 — FaceAssure Headless SDK (browser bundle in WebView, Expo / React Native 0.76)

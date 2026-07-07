@@ -1,0 +1,21 @@
+{
+  "MOVE_INTO_FRAME": "Position your face in the frame",
+  "FACE_TOO_CLOSE": "Move back a little",
+  "FACE_TOO_FAR": "Move closer",
+  "HEAD_TOO_LEFT": "Turn your head slightly right",
+  "HEAD_TOO_RIGHT": "Turn your head slightly left",
+  "HEAD_TOO_UP": "Lower your chin",
+  "HEAD_TOO_DOWN": "Raise your chin",
+  "HEAD_TILTED_LEFT": "Straighten your head",
+  "HEAD_TILTED_RIGHT": "Straighten your head",
+  "IMAGE_NOT_BRIGHT_ENOUGH": "Find better lighting",
+  "IMAGE_TOO_BLURRY": "Hold still",
+  "CONTRE_JOUR_DETECTED": "Avoid backlighting",
+  "VALID_CAPTURE_STATE": "Hold steady",
+  "IMAGE_QUALITY_SUFFICIENT": "Checking quality…",
+  "OPEN_YOUR_MOUTH": "Open your mouth",
+  "KEEP_YOUR_MOUTH_OPEN": "Keep your mouth open",
+  "CLOSE_YOUR_MOUTH": "Close your mouth",
+  "SMILE": "Smile",
+  "MULTIPLE_FACES_DETECTED": "Only one person should be in the frame"
+}

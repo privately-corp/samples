@@ -4,6 +4,60 @@ Sample React Native application demonstrating how to integrate the **FaceAssure 
 
 The FaceAssure Headless SDK is distributed as a browser bundle (JavaScript + WASM). React Native cannot execute it directly. This sample hosts the SDK inside a WebView, served from on-device `localhost`, so camera access, WebAssembly, and cryptography run in a secure browser context.
 
+## Contents
+
+| File / folder | Purpose |
+|---|---|
+| `src/` | React Native sample app (bridge, UI, static server) |
+| `assets/sdk/index.html` | **Canonical WebView host** — SDK lifecycle |
+| `README.md` | Human-oriented setup guide (this file) |
+| `AGENTS.md` | Agent brief — rules for AI-assisted integration |
+| `API_QUICK_REFERENCE.md` | SDK API + RN bridge contract |
+| `INTEGRATION_TASKS.md` | Copy-paste prompts per scenario |
+| `CHECKLIST.md` | Definition of done / acceptance tests |
+| `ANTI_PATTERNS.md` | Common mistakes to avoid |
+| `data/guidance-codes.en.json` | Default user-facing copy for SDK codes |
+| `data/error-codes.json` | Default messages for warn/error/destroyed |
+| `llms.txt` | Doc index for LLM-aware tools |
+| `prompts/` | Individual task prompts |
+| `.cursor/skills/faceassure-headless-sdk-react-native/` | Cursor Agent Skill |
+| `.github/copilot-instructions.md` | GitHub Copilot pointer |
+| `CLAUDE.md` | Claude Code pointer |
+| `SKILL.md` | AI integration guide index |
+
+---
+
+## Agent-assisted integration (AI / IDE)
+
+If you use Cursor, GitHub Copilot, Claude Code, Windsurf, or similar:
+
+1. Open this folder in your IDE (or copy it into your project).
+2. Ask your agent to read **`AGENTS.md`** first, then **`assets/sdk/index.html`**.
+3. Pick a scenario from **`INTEGRATION_TASKS.md`** (or `prompts/`).
+4. Verify the result with **`CHECKLIST.md`**.
+
+**Starter prompt:**
+
+```
+Read AGENTS.md and assets/sdk/index.html in the React Native integration pack.
+Integrate HeadlessSDK into my app using WebView + on-device localhost.
+Fetch JWTs from my backend at /api/age-check/session.
+Map guidance codes via data/guidance-codes.en.json.
+Follow ANTI_PATTERNS.md and complete CHECKLIST.md when done.
+```
+
+Tool-specific entry points:
+
+| Tool | File |
+|------|------|
+| Any agent | `AGENTS.md` |
+| Cursor | `.cursor/skills/faceassure-headless-sdk-react-native/SKILL.md` |
+| GitHub Copilot | `.github/copilot-instructions.md` |
+| Claude Code | `CLAUDE.md` |
+| Doc-aware LLMs | `llms.txt` |
+
+---
+
 ## Architecture
 
 ```
@@ -135,4 +189,10 @@ Credentials are stored locally on the device (AsyncStorage) for convenience acro
 
 ## Further reading
 
-Refer to the **FaceAssure Headless SDK** integrator documentation supplied with your SDK package (API reference, authentication, callbacks, and error codes).
+| Resource | Purpose |
+|----------|---------|
+| `API_QUICK_REFERENCE.md` | In-pack API + bridge cheat sheet (v1.10.32) |
+| `INTEGRATION_TASKS.md` | AI prompts for common integration tasks |
+| Privately onboarding docs | Full API, JWT claims, webhook setup |
+
+For questions about SDK distribution, credentials, or webhook setup, contact your Privately integration contact.
